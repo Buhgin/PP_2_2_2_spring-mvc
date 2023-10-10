@@ -20,7 +20,7 @@ public class CarsController {
     }
 
     @GetMapping(value = "/cars{count}")
-    public String printWelcome(ModelMap model, int count) {
+    public String printWelcome(ModelMap model, @RequestParam(value = "count") int count) {
 
         model.addAttribute("messages", car.getCars(count));
         return "index";
