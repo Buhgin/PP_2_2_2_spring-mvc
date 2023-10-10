@@ -18,6 +18,6 @@ public class Car {
         return "Car " +
                 "model ='" + model + "'\n" +
                 ", color ='" + color +"'\n" +
-                ", series =" + series ;
+                ", series =" + series  ;
     }
 }

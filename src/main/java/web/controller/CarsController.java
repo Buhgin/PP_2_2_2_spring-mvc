@@ -21,12 +21,8 @@ public class CarsController {
 
     @GetMapping(value = "/cars{count}")
     public String printWelcome(ModelMap model, int count) {
-        if (count > car.getCars().size()) {
-            count = 5;
-        }
-        List<String> messages = new ArrayList<>(car.getCars(count)
-                .stream().map(Car::toString).toList());
-        model.addAttribute("messages", messages);
+
+        model.addAttribute("messages", car.getCars(count));
         return "index";
     }
 }

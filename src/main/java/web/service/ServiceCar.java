@@ -3,6 +3,7 @@ package web.service;
 import org.springframework.stereotype.Service;
 import web.model.Car;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -15,12 +16,14 @@ public class ServiceCar {
             new Car("Toyota", "white", 2)
     );
 
-    public List<Car> getCars(int count) {
-        return cars.subList(0, count);
+    public List<String> getCars(int count) {
+        if (count > cars.size()) {
+            count = 5;
+        }
+
+        return cars
+                .stream().map(Car::toString).toList().subList(0, count);
     }
 
 
-    public List<Car> getCars() {
-        return cars;
-    }
 }
