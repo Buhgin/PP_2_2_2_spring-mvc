@@ -19,10 +19,10 @@ public class CarsController {
         this.car = car;
     }
 
-    @GetMapping(value = "/cars{count}")
+    @GetMapping(value = "/cars")
     public String printWelcome(ModelMap model, @RequestParam(value = "count") int count) {
 
-        model.addAttribute("messages", car.getCars(count));
-        return "index";
+        model.addAttribute("cars", car.getCars(count));
+        return "cars";
     }
 }

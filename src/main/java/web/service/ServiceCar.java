@@ -16,13 +16,12 @@ public class ServiceCar {
             new Car("Toyota", "white", 2)
     );
 
-    public List<String> getCars(int count) {
+    public List<Car> getCars(int count) {
         if (count > cars.size()) {
             count = 5;
         }
 
-        return cars
-                .stream().map(Car::toString).toList().subList(0, count);
+        return cars.subList(0, count);
     }
 
 

@@ -20,4 +20,28 @@ public class Car {
                 ", color ='" + color +"'\n" +
                 ", series =" + series  ;
     }
+
+    public String getModel() {
+        return model;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public int getSeries() {
+        return series;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void setSeries(int series) {
+        this.series = series;
+    }
 }
